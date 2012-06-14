@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Epic Game</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="lib/jquery-1.7.min.js"></script>
+	<script>
+		var isMobile = false;
+		$(document).ready(function() {
+			$('#container').css('width', '400px');
+			$('#container').css('height', '600px');
+		});
+	</script>
+</head>
+<body>
+
+<div style="position: relative;" id='container'>
+	<canvas id="game-layer" width="400" height="600" style="position: absolute; left: 0; top: 0; z-index: 1;">
+	<h1>Unfortunately, your browser does not support the canvas tag.</h1>
+	</canvas>
+	<div id="action-panel" style="display: none;">
+		<ul class='actions'>
+			<li class="heading">
+				<div id='current-turn'></div>
+				<div id='current-hp'></div>
+				<div id='current-energy'></div>
+			</li>
+			<li><a href="javascript:void(0);" onclick="Game.setAction(ActionLibrary[1]);">Move</a></li>
+			<li><a href="javascript:void(0);" onclick="Game.setAction(ActionLibrary[2]);">Attack</a></li>
+			<!--
+			<li><a href="javascript:void(0);" onclick="Game.setAction(ActionLibrary[3]);">Defend</a></li>
+			<li><a href="javascript:void(0);">Magic</a></li>
+			<li><a href="javascript:void(0);">Items</a></li>
+			<li><a href="javascript:void(0);">Retreat</a></li>
+			-->
+		</ul>
+	</div>
+	<div id='viewport-control-panel'>
+		<ul>
+			<li><a href='javascript:void(0);' onclick="updateViewport('up');">UP</a></li>
+			<li><a href='javascript:void(0);' onclick="updateViewport('down');">DOWN</a></li>
+			<li><a href='javascript:void(0);' onclick="updateViewport('left');">LEFT</a></li>
+			<li><a href='javascript:void(0);' onclick="updateViewport('right');">RIGHT</a></li>
+		</ul>
+	</div>
+</div>
+
+<!--
+<div id="system-control">
+	<b>Esc</b>: Pause, <b>Enter</b>: Resume
+	<hr/>
+	<div id="fps"></div>
+	<div id="mouse_pos"></div>
+	<div id="message"></div>
+</div>
+-->
+
+<script type="text/javascript" src="lib/actions-lib.js"></script>
+<script type="text/javascript" src="lib/helper.js"></script>
+<script type="text/javascript" src="lib/message.js"></script>
+<script type="text/javascript" src="lib/game-engine.js"></script>
+<script type="text/javascript" src="lib/tile-engine.js"></script>
+<script type="text/javascript" src="lib/player-engine.js"></script>
+<script type="text/javascript" src="js/game-assets.js"></script>
+<script type="text/javascript" src="js/game-init.js"></script>
+<script type="text/javascript" src="js/listener.js"></script>
+
+</body>
+</html>
+
